@@ -1,25 +1,59 @@
 var month = document.getElementById("month")
 console.log(month);
 var days = document.getElementById('days')
+var year = document.getElementById("year")
+year.addEventListener('click',changeyr)
+function changeyr(){
+    yr=year.value
+    console.log(yr)
+    document.getElementById('month').value=''
+    document.getElementById('days').value=''
+    //oop.remove();
+   
+}
 month.addEventListener("click", change)
 function change() {
+    document.getElementById('days').value=''
     if (month.value == 2) {
-        console.log("hello");
+        
+        //console.log("hello");
+        document.getElementById('days').value=''
 
-        for (i = 1; i <= 28; i++) {
-            var op = document.createElement('Option')
-            var optionText = document.createTextNode(i);
-            console.log(op);
-            // console.log(optionText)
-            var oop = op.appendChild(optionText)
-            days.appendChild(op)
-            // days.value=optionText
-            // console.log(days)
-            // console.log(oop);
+        if ((0 == yr % 4) && (0 != yr % 100) || (0 == yr % 400)) {
+            for (i = 1; i <= 29; i++) {
+                var op = document.createElement('option')
+                var optionText = document.createTextNode(i);
+                console.log(op);
+                // console.log(optionText)
+                var oop = op.appendChild(optionText)
+                days.appendChild(op)
+                
+                // days.value=optionText
+                // console.log(days)
+                // console.log(oop);
 
 
-            // days = document.getElementById("days")
+                // days = document.getElementById("days")
+            }
+           
         }
+        else {
+            for (i = 1; i <= 28; i++) {
+                var op = document.createElement('Option')
+                var optionText = document.createTextNode(i);
+                console.log(op);
+                // console.log(optionText)
+                var oop = op.appendChild(optionText)
+                days.appendChild(op)
+                // days.value=optionText
+                // console.log(days)
+                // console.log(oop);
+    
+    
+                // days = document.getElementById("days")
+            }
+        }
+       
 
 
     }

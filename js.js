@@ -15,11 +15,13 @@ month.addEventListener("click", change)
 function change() {
     document.getElementById('days').value=''
     if (month.value == 2) {
-        
+        days.innerHTML=''
         //console.log("hello");
+
         document.getElementById('days').value=''
 
         if ((0 == yr % 4) && (0 != yr % 100) || (0 == yr % 400)) {
+            days.innerHTML=''
             for (i = 1; i <= 29; i++) {
                 var op = document.createElement('option')
                 var optionText = document.createTextNode(i);
@@ -38,6 +40,7 @@ function change() {
            
         }
         else {
+            days.innerHTML=''
             for (i = 1; i <= 28; i++) {
                 var op = document.createElement('Option')
                 var optionText = document.createTextNode(i);
@@ -58,6 +61,7 @@ function change() {
 
     }
     else if (month.value == 1 || month.value == 3 || month.value == 5 || month.value == 7 || month.value == 8 || month.value == 10 || month.value == 12) {
+        days.innerHTML=''
         for (i = 1; i <= 31; i++) {
             var op = document.createElement('Option')
             const optionText = document.createTextNode(i);
@@ -71,6 +75,7 @@ function change() {
     else if (month.value == 00) {
     }
     else {
+        days.innerHTML=''
         for (i = 1; i <= 30; i++) {
             var op = document.createElement('Option')
             const optionText = document.createTextNode(i);

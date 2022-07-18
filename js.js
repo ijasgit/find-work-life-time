@@ -22,10 +22,11 @@ function changeyr() {
 
 
 
-//button gooo..........
+//button gooo..........................................
 
 btn.addEventListener('click', go)
 function go() {
+    di.innerHTML = '';
     //age yr calculating............................
     var reyr = new Date()
     // console.log(reyr)
@@ -80,6 +81,9 @@ function go() {
     //...............................................
     //creating button
     for (i = 1; i <= furage; i++) {
+        // di.remove();
+        //di.removeChild(button)
+        
         console.log(i)
         var button = document.createElement('button')
         button.setAttribute('style', 'background-color: red');
